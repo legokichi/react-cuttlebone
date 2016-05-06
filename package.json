@@ -1,0 +1,22 @@
+{
+  "name": "ikagaka-for-smartphone",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "setup": "npm install -g typescript typings webpack webpack-dev-server",
+    "install": "npm install; npm link typescript; typings install",
+    "tree": "tree -I node_modules",
+    "build": "webpack",
+    "watch": "webpack-dev-server --progress --colors --content-base ./"
+  },
+  "author": "legokichi",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^15.0.2",
+    "react-dom": "^15.0.2"
+  },
+  "devDependencies": {
+    "ts-loader": "^0.8.2"
+  }
+}
