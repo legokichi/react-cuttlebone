@@ -3,10 +3,8 @@
     "compilerOptions": {
         "jsx": "react",
         "target": "ES5",
-        "outDir": "./lib",
         "module": "commonjs",
         "newLine": "LF",
-        "declaration": true,
         "diagnostics": true,
         "emitDecoratorMetadata": true,
         "listFiles": true,

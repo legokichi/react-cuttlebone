@@ -1,12 +1,12 @@
 {
   "name": "ikagaka-for-smartphone",
   "version": "1.0.0",
-  "description": "",
+  "description": "cuttlebone on react",
   "main": "index.js",
   "scripts": {
     "setup": "npm install -g typescript typings webpack webpack-dev-server",
     "install": "npm install; npm link typescript; typings install",
-    "tree": "tree -I node_modules",
+    "tree": "tree -I 'node_modules|typings'",
     "build": "webpack",
     "watch": "webpack-dev-server --progress --colors --content-base ./"
   },
