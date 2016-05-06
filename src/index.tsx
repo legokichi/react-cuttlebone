@@ -2,12 +2,16 @@
 
 /// <reference path="./require.d.ts" />
 
-import React = require('react');
-import ReactDOM = require('react-dom');
+import * as React from 'react'
+import * as ReactDOM from 'react-dom'
 
-ReactDOM.render(
-  <h1>Hello, world!</h1>,
-  document.getElementById('example')
-);
+function render(){
+  ReactDOM.render(
+    <h1>Hello, world!</h1>,
+    document.getElementById("INIT")
+  );
+}
 
 console.log("hello webpack");
+
+window.addEventListener("DOMContentLoaded", render);
