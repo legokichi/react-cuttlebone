@@ -1,43 +1,60 @@
-class View {
+interface View {
   public element: HTMLElement;
+  public render(): void;
   public destructor(): void;
-  public on(event: string, callback: (event: any)=> any): any;
+  public on?(event: string, callback: (event: any)=> any): any;
 }
 
-class LayerView extends View {
-  private layerStack: this[];
-  public raise(): void;
-  public lower(): void;
+class LayerView implements View {
+  public parentView: View;
+  public positionX: "left-outside" | "left-inside" | "right-inside" | "right-outside";
+  public positionY: "top-outside" | "top-inside" | "bottom-inside" | "bottom-outside";
+  public offsetX: number;
+  public offsetY: number;
+  public width: number;
+  public height: number;
+}
+class LayerSetView implements View {
+  private layers: LayerView[];
+  public foreground(id: number): void;
 }
 
-class NamedView extends View {
-  private namedies: NamedLayerView[];
+class CanvasRender {
+  canvas: HTMLCanvasElement;
 }
 
-class NamedLayerView extends LayerView {
-  public id: number; // このゴーストのプロセス番号
-  private scopes: {[number]: ScopeLayerView;}; // このゴースト配下のキャラクター一覧
-  private scopeLayerStack: ScopeLayerView[]; // このゴースト配下のキャラクターのレイヤのスタック状態
-  private currentScope: ScopeLayerView; // 現在のキャラクター
+class DesktopView extends LayerSetView {
+  ghosts: GhostView[];
+  contextmenu: ContextMenuView;
+}
+class GhostView extends LayerSetView {
+  scopes: ScopeView[];
+  inputBox: InputBoxView[];
+  communicationBox: InputBoxView[];
+  on("active", handler: (event: any)=> any): any;
+}
+class ScopeView extends LayerSetView {
+  surface: SurfaceView[];
+  balloon: BalloonView[];
+  on("active", handler: (event: any)=> any): any;
 }
 
-class ScopeLayerView extends LayerView {
-  // \p[]キャラクター一体分の情報を保持する
-  
-  private surface: SurfaceView; // このキャラクターのサーフェスビュー
-  private blimp: BlimpView; // このキャラクターのバルーンビュー
-
-  public id: number; // このキャラクターのスコープ番号
-  public type: "sakura" | "kero"; // スコープ種別
-
-  // internal methods
-  private changeSurface(surfaceId: number): Surface;
-  private changeBalloon(balloonId: number): Balloon;
-
-  // cuttlebone API compatible
-  public surface(): Surface; // 現在のサーフェスビューを返す
-  public surface(surfaceId: number): Surface; // サーフェスビューを変更する
-  public surface(surfaceAlias: string): Surface; // サーフェスビューを変更する
-  public blimp(): Blimp; // 現在のバルーンビューを返す
-  public blimp(blimpId: number): Blimp; // バルーンビューを変更する
+class SufaceView extends CanvasRender, LayerView {
+  change(surfaceId: number): void;
+  change(surfaceAlias: string): void;
+  on("mouse", handler: (event: any)=> any): any;
 }
+class BalloonView extends CanvasRender, LayerView {
+  textfield: HTMLElement;
+  scroll(number): void;
+  on("select", handler: (event: any)=> any): any;
+}
+
+class ContextMenuView extends CanvasRender, LayerView {
+  menuItems: MenuItem[];
+  on("select", handler: (event: any)=> any): any;
+}
+class InputBoxView extends CanvasRender, LayerView {
+  on("input", handler: (event:any)=> any): any;
+}
+
