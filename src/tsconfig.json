@@ -3,8 +3,10 @@
     "compilerOptions": {
         "jsx": "react",
         "target": "ES5",
+        "outDir": "../lib",
         "module": "commonjs",
         "newLine": "LF",
+        "declaration": true,
         "diagnostics": true,
         "emitDecoratorMetadata": true,
         "listFiles": true,
@@ -20,14 +22,19 @@
         "suppressImplicitAnyIndexErrors": true
     },
     "files": [
-        "./src/index.tsx",
-        "./typings/browser.d.ts"
-    ],
-    "exclude": [
-        "./node_modules"
-    ],
-    "atom": {
-        "rewriteTsconfig": true
-    },
-    "compileOnSave": false
+        "./BalloonView.tsx",
+        "./CanvasRenderView.tsx",
+        "./ContextMenuView.tsx",
+        "./DesktopView.tsx",
+        "./Event.d.ts",
+        "./GhostView.tsx",
+        "./index.tsx",
+        "./LayerSetView.tsx",
+        "./LayerView.tsx",
+        "./require.d.ts",
+        "./ScopeView.tsx",
+        "./SurfaceView.tsx",
+        "./View.tsx",
+        "../typings/browser.d.ts"
+    ]
 }

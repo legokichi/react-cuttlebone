@@ -4,7 +4,7 @@ module.exports = {
     index: './src/index.tsx'
   },
   output: {
-    filename: './dist/index.js'
+    filename: './lib/index.js'
   },
   resolve: {
     root: [path.join(__dirname,'node_modules')],
@@ -23,6 +23,6 @@ module.exports = {
     ]
   },
   ts: {
-    configFileName: "./tsconfig.json"
+    configFileName: "./src/tsconfig.json"
   }
 }

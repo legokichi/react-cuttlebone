@@ -4,15 +4,19 @@
   "description": "cuttlebone on react",
   "main": "index.js",
   "scripts": {
-    "setup": "npm install -g typescript typings webpack webpack-dev-server",
-    "install": "npm install; npm link typescript; typings install",
+    "setup": "npm install -g typescript typings webpack",
+    "install": "npm install; npm link typescript webpack; typings install",
     "tree": "tree -I 'node_modules|typings'",
-    "build": "webpack",
-    "watch": "webpack-dev-server --progress --colors --content-base ./"
+    "build": "tsc -p src/tsconfig.json",
+    "watch": " tsc -p src/tsconfig.json --watch",
+    "dev-build": "webpack -d --display-modules --progress",
+    "dist-build": "webpack -p --display-modules --progress"
   },
   "author": "legokichi",
   "license": "MIT",
   "dependencies": {
+    "eventemitter2": "^1.0.3",
+    "jquery": "^2.2.3",
     "react": "^15.0.2",
     "react-dom": "^15.0.2"
   },
