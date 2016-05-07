@@ -1,7 +1,15 @@
 import * as React from "react";
 
-export default class View extends EventEmitter2 {
+// React.Component<P, S>
+// P: props
+// S: State
+ abstract class View extends React.Component<{}, {}> {
   element: HTMLElement;
-  render() {}
-  destructor() {}
+  constructor(props: any) {
+    super(props);
+  }
+  abstract render(): JSX.Element;
+  abstract destructor(): void;
 }
+
+export default View;
