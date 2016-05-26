@@ -31,7 +31,7 @@ Ikagaka cuttlebone UI Kit with React
 
 ## components
 
-### <Cuttlebone />
+### &lt;Cuttlebone />
 
 the top level component of react-cuttlebone
 
@@ -42,7 +42,7 @@ the top level component of react-cuttlebone
 ```
 
     
-### <Doc />
+### &lt;Doc />
 
 actually webview
 
@@ -54,7 +54,7 @@ actually webview
 ```
 
 
-### <Box />
+### &lt;Box />
  
 Box is inline-block or <img /> like inline element as have width and height
 
@@ -64,7 +64,7 @@ Box is inline-block or <img /> like inline element as have width and height
 </Box>
 ```
 
-### <CanvasBox />
+### &lt;CanvasBox />
 
 canvas element
 
@@ -73,7 +73,7 @@ canvas element
 ```
 
 
-### <Layer />
+### &lt;Layer />
 
 ```xml
 <Layer>
@@ -81,7 +81,7 @@ canvas element
 </Layer>
 ```
 
-### <LayerSet />
+### &lt;LayerSet />
 
 ```xml
 <LayerSet>
