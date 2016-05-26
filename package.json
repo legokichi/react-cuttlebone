@@ -4,12 +4,10 @@
   "description": "cuttlebone on react",
   "main": "index.js",
   "scripts": {
-    "setup": "npm install -g typescript typings webpack",
-    "install": "npm install; npm link typescript webpack; typings install",
-    "tree": "tree -I 'node_modules|typings'",
-    "build": "tsc -p src/tsconfig.json",
-    "watch": " tsc -p src/tsconfig.json --watch",
-    "dev-build": "webpack -d --display-modules --progress",
+    "setup": "npm install -g coffee-script webpack; npm run init;",
+    "init": "npm install; npm link coffee-script webpack;",
+    "tree": "tree -I 'node_modules'",
+    "dev-build": "webpack -d --display-modules --progress --watch",
     "dist-build": "webpack -p --display-modules --progress"
   },
   "author": "legokichi",
@@ -21,11 +19,6 @@
     "react-dom": "^15.0.2"
   },
   "devDependencies": {
-    "css-loader": "^0.23.1",
-    "file-loader": "^0.8.5",
-    "raw-loader": "^0.5.1",
-    "style-loader": "^0.13.1",
-    "ts-loader": "^0.8.2",
-    "url-loader": "^0.5.7"
+    "coffee-loader": "^0.7.2"
   }
 }
