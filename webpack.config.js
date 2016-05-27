@@ -10,8 +10,8 @@ module.exports = {
     root: [path.join(__dirname,'node_modules')],
     // Add `.ts` and `.tsx` as a resolvable extension.
     extensions: [
-      '',
-      //'.webpack.js', '.web.js', '.ts', '.tsx', '.js', 
+      '','.webpack.js', '.web.js',
+      '.ts', '.tsx', '.js', 
       '.coffee', '.coffee.me', '.litcoffee']
   },
   externals: {

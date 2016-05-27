@@ -1,5 +1,5 @@
 {
-  "name": "ikagaka-for-smartphone",
+  "name": "react-cuttlebone",
   "version": "1.0.0",
   "description": "cuttlebone on react",
   "main": "index.js",
@@ -13,6 +13,7 @@
   "author": "legokichi",
   "license": "MIT",
   "dependencies": {
+    "co": "^4.6.0",
     "eventemitter2": "^1.0.3",
     "jquery": "^2.2.3",
     "react": "^15.0.2",
